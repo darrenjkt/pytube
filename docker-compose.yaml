@@ -1,0 +1,11 @@
+services:
+  pytube:
+    container_name: pytube
+    image: pytube:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/pytube
+    working_dir: /pytube
+    command: bash -c "pytube https://www.youtube.com/watch?v=zZTQngw8MZE -t ./downloads"
